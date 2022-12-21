@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import "beercss";
 import './index.css';
-import App from './App';
+import './Global/Fonts/Fonts.css';
 import reportWebVitals from './reportWebVitals';
+import Main from './Screen/Main/Main';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+root.render(<Main/>);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
