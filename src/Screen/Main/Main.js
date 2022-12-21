@@ -3,12 +3,12 @@ import Appbar from './components/Appbar/Appbar';
 import Soundbox from './components/Soundbox/Soundbox';
 import Soundrow from './components/Soundrow/Soundrow';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGear , faPlay , faLeaf } from '@fortawesome/free-solid-svg-icons';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import FAB from './components/FAB/FAB';
 import audioschema from "./json/audioschema.json";
 import {audioschemaicon} from "./json/audioschemaicon";
 
-const di = <div className="small-divider"></div>;
+// const di = <div className="small-divider"></div>;
 
 function Main() {
 
