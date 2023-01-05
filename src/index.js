@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import "beercss";
 import './index.css';
 import './Global/Fonts/Fonts.css';
-import Main from './Screen/Main/Main';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Main/>
+    <App />
   </React.StrictMode>
 );
 

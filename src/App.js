@@ -3,7 +3,7 @@ import Main from './Screen/Main/Main';
 
 function App() {
   return (
-    <Main/>    
+    <Main/>
   );
 }
 
