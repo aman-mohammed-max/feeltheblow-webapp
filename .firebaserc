@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "feeltheblows"
-  }
+  },
+  "targets": {
+    "feeltheblows": {
+      "hosting": {
+        "re": [
+          "feeltheblow"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
