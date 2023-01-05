@@ -9,6 +9,7 @@ function Sliders(props) {
         e.style.setProperty('--max', e.max === '' ? '100' : e.max);
         e.addEventListener('input', () => e.style.setProperty('--value', e.value));
       }
+      
 
   return (
     <div>

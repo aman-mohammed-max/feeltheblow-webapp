@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 function Soundbox(props) {
   return (
-   <div className='hgh'>
-    <div className="row" style={{paddingLeft: 10}}>
+   <div className='hgh' style={{marginBottom: 20 }}>
+    <div className="row" style={{paddingLeft: 12}}>
         {props.icon}
       <p className="medium-text capitalize bold">{props.title}</p>
      </div>
-     <article style={{marginTop: 7}}>
+     <article style={{marginTop: 9}}>
         {props.children}
      </article>
     </div>
