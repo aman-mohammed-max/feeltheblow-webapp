@@ -9,7 +9,6 @@ import FAB from "./components/FAB/FAB";
 import { audioschema } from "./json/audioschema";
 import { audioschemaicon } from "./json/audioschemaicon";
 import { Helmet } from "react-helmet";
-import Settings from "../Settings/Settings";
 
 // const Di = () => <div className="small-divider"></div>;
 
