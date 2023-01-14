@@ -1,13 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import './Global/Fonts/Fonts.css';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import reportWebVitals from './reportWebVitals';
-import Main from './Screen/Main/Main';
+import React, { createContext, useState } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import "./Global/Fonts/Fonts.css";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import reportWebVitals from "./reportWebVitals";
+import Main from "./Screen/Main/Main";
+import Settings from "./Screen/Settings/Settings";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Main/>);
+export const settingsopen = createContext(null);
+
+function App() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <settingsopen.Provider value={{ open, setOpen }}>
+        <Main />
+        <Settings />
+      </settingsopen.Provider>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

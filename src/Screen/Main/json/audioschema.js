@@ -17,7 +17,7 @@ import white_noise from '../../../Global/Audio/white-noise.mp3';
 export const audioschema = 
 
 {
-    naturel : { name: "naturel",
+    naturel : { name: "natural",
         row: {
             1 : {name: "rain" , audio : rain},
             2 : {name: "storm" , audio : storm},
