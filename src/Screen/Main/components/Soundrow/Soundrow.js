@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import Sliders from "../../../../Global/Components/Sliders/Sliders";
 import {
   openDB,
-  set,
+  // set,
   get,
-  remove,
-  clear,
+  // remove,
+  // clear,
 } from "../../../../Global/Assets/localDB/LocalDB";
 
 function Soundrow(props) {

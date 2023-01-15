@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Appbar from "./components/Appbar/Appbar";
 import "./Main.css";
 import Soundbox from "./components/Soundbox/Soundbox";

@@ -15,9 +15,9 @@ import white_noise from "../../../Global/Audio/white-noise.mp3";
 import {
   openDB,
   set,
-  get,
-  remove,
-  clear,
+//   get,
+//   remove,
+//   clear,
 } from "../../../Global/Assets/localDB/LocalDB";
 
 openDB();
