@@ -11,6 +11,14 @@ export const settingsopen = createContext(null);
 
 function App() {
   const [open, setOpen] = useState(false);
+
+  const play = (hh) => {
+    hh();
+  };
+
+  const pause = (hd) => {
+    hd();
+  };
   return (
     <>
       <settingsopen.Provider value={{ open, setOpen }}>

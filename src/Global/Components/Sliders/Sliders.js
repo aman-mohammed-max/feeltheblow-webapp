@@ -33,7 +33,7 @@ Sliders.propTypes = {
   min: PropTypes.number,
   max: PropTypes.number,
   onChange: PropTypes.func,
-  value: PropTypes.number,
+  value: PropTypes.string,
   step: PropTypes.number,
   style: PropTypes.object,
 };

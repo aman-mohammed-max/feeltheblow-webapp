@@ -8,7 +8,7 @@ import { settingsopen } from "../../../..";
 function Appbar(props) {
   const {open, setOpen} = useContext(settingsopen);
   return (
-    <header className="primary-container">
+    <header className="primary-container select_disabled">
       <nav>
         <h5 style={{ fontFamily: "'Pacifico', cursive" }} className="max">
           {string.appname}

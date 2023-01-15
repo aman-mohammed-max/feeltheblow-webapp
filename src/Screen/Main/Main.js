@@ -1,25 +1,37 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import Appbar from "./components/Appbar/Appbar";
 import "./Main.css";
 import Soundbox from "./components/Soundbox/Soundbox";
 import Soundrow from "./components/Soundrow/Soundrow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import FAB from "./components/FAB/FAB";
 import { audioschema } from "./json/audioschema";
 import { audioschemaicon } from "./json/audioschemaicon";
 import { Helmet } from "react-helmet";
 
-// const Di = () => <div className="small-divider"></div>;
-
 function Main() {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  function playbutton() {
+    if (audioschema.isPaused()) {
+      console.log('Play')
+      setIsPlaying(true)
+      audioschema.AllSoundsPlay();
+    } else {
+      console.log('Pause')
+      setIsPlaying(false)
+      audioschema.AllSoundsPause();
+    }
+  }
+
   return (
     <>
       <Helmet>
         <title>feeltheblow</title>
       </Helmet>
       <Appbar />
-      <main className="responsive large-padding">
+      <main className="responsive large-padding select_disabled">
         <Soundbox
           icon={audioschemaicon.naturel.icon}
           title={audioschema.naturel.name}
@@ -27,38 +39,38 @@ function Main() {
           <Soundrow
             title={audioschema.naturel.row[1].name}
             icon={audioschemaicon.naturel.row[1].icon}
-            audio={audioschema.naturel.row[1].audio}
+            Volume={audioschema.naturel.row[1].SVolume}
           />
           <Soundrow
             title={audioschema.naturel.row[2].name}
             icon={audioschemaicon.naturel.row[2].icon}
-            audio={audioschema.naturel.row[2].audio}
+            Volume={audioschema.naturel.row[2].SVolume}
           />
           <Soundrow
             title={audioschema.naturel.row[3].name}
             icon={audioschemaicon.naturel.row[3].icon}
-            audio={audioschema.naturel.row[3].audio}
+            Volume={audioschema.naturel.row[3].SVolume}
           />
           <Soundrow
             title={audioschema.naturel.row[4].name}
             icon={audioschemaicon.naturel.row[4].icon}
-            audio={audioschema.naturel.row[4].audio}
+            Volume={audioschema.naturel.row[4].SVolume}
           />
 
           <Soundrow
             title={audioschema.naturel.row[5].name}
             icon={audioschemaicon.naturel.row[5].icon}
-            audio={audioschema.naturel.row[5].audio}
+            Volume={audioschema.naturel.row[5].SVolume}
           />
           <Soundrow
             title={audioschema.naturel.row[6].name}
             icon={audioschemaicon.naturel.row[6].icon}
-            audio={audioschema.naturel.row[6].audio}
+            Volume={audioschema.naturel.row[6].SVolume}
           />
           <Soundrow
             title={audioschema.naturel.row[7].name}
             icon={audioschemaicon.naturel.row[7].icon}
-            audio={audioschema.naturel.row[7].audio}
+            Volume={audioschema.naturel.row[7].SVolume}
           />
         </Soundbox>
 
@@ -69,17 +81,17 @@ function Main() {
           <Soundrow
             title={audioschema.travel.row[1].name}
             icon={audioschemaicon.travel.row[1].icon}
-            audio={audioschema.travel.row[1].audio}
+            Volume={audioschema.travel.row[1].SVolume}
           />
           <Soundrow
             title={audioschema.travel.row[2].name}
             icon={audioschemaicon.travel.row[2].icon}
-            audio={audioschema.travel.row[2].audio}
+            Volume={audioschema.travel.row[2].SVolume}
           />
           <Soundrow
             title={audioschema.travel.row[3].name}
             icon={audioschemaicon.travel.row[3].icon}
-            audio={audioschema.travel.row[3].audio}
+            Volume={audioschema.travel.row[3].SVolume}
           />
         </Soundbox>
 
@@ -90,12 +102,12 @@ function Main() {
           <Soundrow
             title={audioschema.interiors.row[1].name}
             icon={audioschemaicon.interiors.row[1].icon}
-            audio={audioschema.interiors.row[1].audio}
+            Volume={audioschema.interiors.row[1].SVolume}
           />
           <Soundrow
             title={audioschema.interiors.row[2].name}
             icon={audioschemaicon.interiors.row[2].icon}
-            audio={audioschema.interiors.row[2].audio}
+            Volume={audioschema.interiors.row[2].SVolume}
           />
         </Soundbox>
 
@@ -106,16 +118,19 @@ function Main() {
           <Soundrow
             title={audioschema.noice.row[1].name}
             icon={audioschemaicon.noice.row[1].icon}
-            audio={audioschema.noice.row[1].audio}
+            Volume={audioschema.noice.row[1].SVolume}
           />
           <Soundrow
             title={audioschema.noice.row[2].name}
             icon={audioschemaicon.noice.row[2].icon}
-            audio={audioschema.noice.row[2].audio}
+            Volume={audioschema.noice.row[2].SVolume}
           />
         </Soundbox>
 
-        <FAB icon={<FontAwesomeIcon icon={faPlay} size="xl" />} />
+        <FAB
+          onClick={playbutton}
+          icon={<FontAwesomeIcon icon={!isPlaying ? faPlay : faPause} size="xl" />}
+        />
       </main>
     </>
   );

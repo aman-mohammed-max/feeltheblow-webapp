@@ -18,7 +18,7 @@ export default function Settings() {
   return (
     <>
       <Title />
-      <div className={open ? "active modal max" : "modal max"}>
+      <div className={open ? "active modal max select_disabled" : "modal max select_disabled"}>
         <h5>Bottom modal</h5>
         <div>Some text here</div>
         <nav className="right-align">
