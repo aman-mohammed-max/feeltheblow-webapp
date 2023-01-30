@@ -1,19 +1,40 @@
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-code {
-  font-family: 'Poppins', sans-serif
-    monospace;
+body::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
 }
 
-.select_disabled{
-  user-select: none; /* For Chrome and Opera */
- -ms-user-select: none; /* For Internet Edge and Explorer*/
- -webkit-user-select: none; /* For Safari */
- -moz-user-select: none; /* For Firefox */
- -khtml-user-select: none; /* Konqueror HTML */
+/* For webkit */
+::-webkit-progress-value {
+  background-color: #ffffff !important;
+}
+
+/* For Firefox */
+progress::-moz-progress-bar {
+  background-color: #ffffff !important;
+}
+
+/* For IE */
+progress::-ms-fill {
+  background-color: #ffffff !important;
+}
+
+.nonminwidth {
+  min-width: auto !important;
+}
+
+.select_disabled {
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
 }

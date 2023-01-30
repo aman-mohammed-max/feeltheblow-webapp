@@ -13,12 +13,16 @@ function Soundrow(props) {
   const [volval, setvolval] = useState();
   
 
-  openDB(() => {
+ openDB(() => {
     get(props.title, (data) => {
-      setvolval(data)
-      props.Volume(data)
+      setvolval(data);
+      props.Volume(data);
     });
   });
+
+  function slidersonchange(e) {
+    props.Volume(e.target.value)
+  }
 
   return (
     <div className="row">
@@ -44,10 +48,10 @@ function Soundrow(props) {
       <div className="max">
         <p className="medium-text bold">{props.title}</p>
         <Sliders
-         value={volval}
+          value={volval}
           max={1}
           step={0.0000001}
-          onChange={(e) => {props.Volume(e.target.value)}}
+          onChange={slidersonchange}
           style={{ width: "100%" }}
         />
       </div>

@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-// import PropTypes from 'prop-types';
 import string from "../../../../Global/string.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";

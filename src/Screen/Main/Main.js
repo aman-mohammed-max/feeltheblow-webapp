@@ -10,17 +10,18 @@ import { audioschema } from "./json/audioschema";
 import { audioschemaicon } from "./json/audioschemaicon";
 import { Helmet } from "react-helmet";
 
+
 function Main() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   function playbutton() {
     if (audioschema.isPaused()) {
-      console.log('Play')
-      setIsPlaying(true)
+      console.log("Play");
+      setIsPlaying(true);
       audioschema.AllSoundsPlay();
     } else {
-      console.log('Pause')
-      setIsPlaying(false)
+      console.log("Pause");
+      setIsPlaying(false);
       audioschema.AllSoundsPause();
     }
   }
@@ -129,7 +130,9 @@ function Main() {
 
         <FAB
           onClick={playbutton}
-          icon={<FontAwesomeIcon icon={!isPlaying ? faPlay : faPause} size="xl" />}
+          icon={
+            <FontAwesomeIcon icon={!isPlaying ? faPlay : faPause} size="xl" />
+          }
         />
       </main>
     </>

@@ -20,7 +20,7 @@ import {
 //   clear,
 } from "../../../Global/Assets/localDB/LocalDB";
 
-openDB();
+openDB()
 
 const Arain = new Audio(rain);
 const Astorm = new Audio(storm);
@@ -51,6 +51,21 @@ Acoffee_shop.volume = 0;
 Afireplace.volume = 0;
 Apink_noise.volume = 0;
 Awhite_noise.volume = 0;
+
+Arain.loop = true;
+Astorm.loop = true;
+Awind.loop = true;
+Awaves.loop = true;
+Astream.loop = true;
+Abirds.loop = true;
+Asummer_night.loop = true;
+Atrain.loop = true;
+Aboat.loop = true;
+Acity.loop = true;
+Acoffee_shop.loop = true;
+Afireplace.loop = true;
+Apink_noise.loop = true;
+Awhite_noise.loop = true;
 
 // set(audioschema.naturel.row[1].name , 0 )
 // set(audioschema.naturel.row[2].name , 0 )
