@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Appbar from "./components/Appbar/Appbar";
 import "./Main.css";
+import string from '../../Global/string.json';
 import Soundbox from "./components/Soundbox/Soundbox";
 import Soundrow from "./components/Soundrow/Soundrow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -29,7 +30,7 @@ function Main() {
   return (
     <>
       <Helmet>
-        <title>feeltheblow</title>
+        <title>{string.appname}</title>
       </Helmet>
       <Appbar />
       <main className="responsive large-padding select_disabled">

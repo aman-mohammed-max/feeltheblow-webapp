@@ -1,14 +1,22 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./Aboutdev.module.css";
-import { Aman } from "../../../../Global/Assets/images/Aman.img"
+import { Aman } from "../../../../Global/Assets/images/Aman.img";
 
-function Aboutdev() {
+function Aboutdev(props) {
   return (
-    <button className={`primary-container margin responsive round max ${styles.button}`}>
+    <button
+      onClick={props.onClick}
+      className={`primary-container margin responsive round max ${styles.button}`}
+    >
       <img className="circle small" alt="00" src={Aman} />
       <span>About Developer</span>
     </button>
   );
 }
+
+Aboutdev.propTypes = {
+  onClick: PropTypes.func,
+};
 
 export default Aboutdev;

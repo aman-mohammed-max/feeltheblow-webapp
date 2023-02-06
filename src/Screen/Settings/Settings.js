@@ -1,10 +1,12 @@
 import React , { useContext } from "react";
-import styles from "./Settings.module.css"
+import styles from "./Settings.module.css";
+import string from "./string.json";
 import { settingsopen } from "../..";
 import { Helmet } from "react-helmet";
 import Appbar from "./components/Appbar/Appbar";
 import Webcontroller from "./components/Webcontroller/Webcontroller";
 import Aboutdev from "./components/Aboutdev/Aboutdev";
+import Evolved from "./components/Evolved/Evolved";
 
 export default function Settings() {
   const { open } = useContext(settingsopen);
@@ -13,7 +15,7 @@ export default function Settings() {
     if (open) {
       return (
         <Helmet>
-          <title>Settings</title>
+          <title>{string.title}</title>
         </Helmet>
       );
     }
@@ -27,6 +29,7 @@ export default function Settings() {
         <div className={`medium-padding ${styles.body}`}>
           <Webcontroller/>  
           <Aboutdev/>
+          <Evolved/>
         </div>
       </div>
     </>

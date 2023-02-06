@@ -1,0 +1,10 @@
+.title {
+  font-family: "Comfortaa", cursive;
+  font-weight: 700 !important;
+  margin: 0 !important;
+}
+
+.top {
+  gap: 10rem !important;
+  pointer-events: none;
+}

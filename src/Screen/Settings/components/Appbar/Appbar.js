@@ -1,6 +1,6 @@
 import React , { useContext } from "react";
 import styles from "./Appbar.module.css";
-import string from "../string.json";
+import string from "../../string.json";
 import { settingsopen } from "../../../..";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
