@@ -4,10 +4,6 @@
 /node_modules
 /.pnp
 .pnp.js
-.gitignore
-.vscode
-package-lock.json
-material-theme.zip
 
 # testing
 /coverage
@@ -25,3 +21,8 @@ material-theme.zip
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.gitignore
+/.vscode
+package-lock.json
+material-theme.zip
