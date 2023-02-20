@@ -1,4 +1,4 @@
-import React , { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Sliders from "../../../../Global/Components/Sliders/Sliders";
 import {
@@ -10,18 +10,16 @@ import {
 } from "../../../../Global/Assets/localDB/LocalDB";
 
 function Soundrow(props) {
-  const [volval, setvolval] = useState();
-  
+  const [defaultvalue, setDefaultvalue] = useState(0);
 
- openDB(() => {
-    get(props.title, (data) => {
-      setvolval(data);
-      props.Volume(data);
+  useEffect(() => {
+    openDB(() => {
+      get(props.title, setDefaultvalue);
     });
-  });
+  }, [props.title]);
 
   function slidersonchange(e) {
-    props.Volume(e.target.value)
+    props.Volume(e.target.value);
   }
 
   return (
@@ -47,8 +45,9 @@ function Soundrow(props) {
       </div>
       <div className="max">
         <p className="medium-text bold">{props.title}</p>
+
         <Sliders
-          value={volval}
+          defaultvalue={toString(defaultvalue)}
           max={1}
           step={0.0000001}
           onChange={slidersonchange}
@@ -57,12 +56,12 @@ function Soundrow(props) {
       </div>
     </div>
   );
-};
+}
 
 Soundrow.propTypes = {
   icon: PropTypes.node,
   title: PropTypes.string,
-  Volume: PropTypes.func
+  Volume: PropTypes.func,
 };
 
 Soundrow.defaultProps = {

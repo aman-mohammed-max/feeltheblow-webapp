@@ -1,0 +1,59 @@
+@import url(./css/theme.css);
+:root {
+  --primary: var(--md-sys-color-primary) !important;
+  --on-primary: var(--md-sys-color-on-primary) !important;
+  --primary-container: var(--md-sys-color-primary-container) !important;
+  --on-primary-container: var(--md-sys-color-on-primary-container) !important;
+  --secondary: var(--md-sys-color-secondary) !important;
+  --on-secondary: var(--md-sys-color-on-secondary) !important;
+  --secondary-container: var(--md-sys-color-secondary-container) !important;
+  --on-secondary-container: var(
+    --md-sys-color-on-secondary-container
+  ) !important;
+  --tertiary: var(--md-sys-color-tertiary) !important;
+  --on-tertiary: var(--md-sys-color-on-tertiary) !important;
+  --tertiary-container: var(--md-sys-color-tertiary-container) !important;
+  --on-tertiary-container: var(--md-sys-color-on-tertiary-container) !important;
+  --error: var(--md-sys-color-error) !important;
+  --on-error: var(--md-sys-color-on-error) !important;
+  --error-container: var(--md-sys-color-error-container) !important;
+  --on-error-container: var(--md-sys-color-on-error-container) !important;
+  --background: var(--md-sys-color-background) !important;
+  --on-background: var(--md-sys-color-on-background) !important;
+  --surface: var(--md-sys-color-surface) !important;
+  --on-surface: var(--md-sys-color-on-surface) !important;
+  --outline: var(--md-sys-color-outline) !important;
+  --surface-variant: var(--md-sys-color-surface-variant) !important;
+  --on-surface-variant: var(--md-sys-color-on-surface-variant) !important;
+  --inverse-surface: var(--md-sys-color-inverse-surface) !important;
+  --inverse-on-surface: var(--md-sys-color-inverse-on-surface) !important;
+  --overlay: rgba(0, 0, 0, 0.5);
+  --active: rgba(0, 0, 0, 0.1);
+  --elevate1: 0 2rem 2rem 0 rgba(0, 0, 0, 0.14),
+    0 1rem 5rem 0 rgba(0, 0, 0, 0.12), 0 3rem 1rem -2rem rgba(0, 0, 0, 0.2);
+  --elevate2: 0 6rem 10rem 0 rgba(0, 0, 0, 0.14),
+    0 1rem 18rem 0 rgba(0, 0, 0, 0.12), 0 3rem 5rem -1rem rgba(0, 0, 0, 0.3);
+  --elevate3: 0 10rem 16rem 0 rgba(0, 0, 0, 0.14),
+    0 1rem 31rem 0 rgba(0, 0, 0, 0.12), 0 3rem 9rem 0rem rgba(0, 0, 0, 0.4);
+}
+
+/* custom colors */
+
+/* Variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --container-box-bg: rgb(118 209 255 / 0.05);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --container-box-bg: rgb(0 102 136 / 0.05);
+  }
+}
+
+/* class */
+.container-box-bg {
+  background-color: var(--container-box-bg) !important;
+  color: var(--md-sys-color-on-surface) !important;
+}

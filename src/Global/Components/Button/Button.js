@@ -29,7 +29,7 @@ const useLongPress = (
   const clear = useCallback(
     (event, shouldTriggerClick = true) => {
       timeout.current && clearTimeout(timeout.current);
-      shouldTriggerClick && !longPressTriggered && onClick();
+      shouldTriggerClick && !longPressTriggered && onClick(event);
       setLongPressTriggered(false);
       if (shouldPreventDefault && target.current) {
         target.current.removeEventListener("touchend", preventDefault);
@@ -60,7 +60,6 @@ const preventDefault = (event) => {
 };
 
 function Button(props) {
-    
   const defaultOptions = {
     shouldPreventDefault: props.spb,
     delay: props.lpdelay,
@@ -81,18 +80,20 @@ function Button(props) {
 }
 
 Button.propTypes = {
-    spb: PropTypes.bool,
-    lpdelay : PropTypes.number,
-    title : PropTypes.string,
-    icon : PropTypes.node,
-    className : PropTypes.string
+  spb: PropTypes.bool,
+  lpdelay: PropTypes.number,
+  title: PropTypes.string,
+  icon: PropTypes.node,
+  className: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  onLongPress: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
-    spb: true ,
-    lpdelay : 500,
-    title : "Button",
-    className : PropTypes.string    
-}
+  spb: true,
+  lpdelay: 500,
+  title: "Button",
+  className: "",
+};
 
 export default Button;

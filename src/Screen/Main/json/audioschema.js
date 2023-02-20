@@ -15,12 +15,12 @@ import white_noise from "../../../Global/Audio/white-noise.mp3";
 import {
   openDB,
   set,
-//   get,
-//   remove,
-//   clear,
+  //   get,
+  //   remove,
+  //   clear,
 } from "../../../Global/Assets/localDB/LocalDB";
 
-openDB()
+openDB();
 
 const Arain = new Audio(rain);
 const Astorm = new Audio(storm);
@@ -252,5 +252,7 @@ export const audioschema = {
     Apink_noise.pause();
     Awhite_noise.pause();
   },
-  isPaused : function () {return Arain.paused}
+  isPaused: function () {
+    return Arain.paused;
+  },
 };

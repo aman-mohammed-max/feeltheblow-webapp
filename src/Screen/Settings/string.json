@@ -2,7 +2,7 @@
     "title": "Settings",
     "evolved": {
         "title": "Blanket",
-        "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lightest ut enim ad minim veniam, quis nostrud exercitation ullam",
+        "des": "Blanket is a desktop app that provides a range of ambient sounds for focus, relaxation, and sleep. The sounds can be customized to create a unique audio environment, and the app is easy to use with a convenient interface. Blanket is available on Flathub for Linux-based operating systems.",
         "button": {
             "1" : {"title": "Github" , "link": "https://github.com/"},
             "2" : {"title": "Flathub" , "link": "https://github.com/"}

@@ -7,7 +7,7 @@ function Aboutdev(props) {
   return (
     <button
       onClick={props.onClick}
-      className={`primary-container margin responsive round max ${styles.button}`}
+      className={`primary-container margin responsive round max container-box-bg ${styles.button}`}
     >
       <img className="circle small" alt="00" src={Aman} />
       <span>About Developer</span>

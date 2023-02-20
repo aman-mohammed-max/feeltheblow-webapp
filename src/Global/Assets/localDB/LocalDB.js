@@ -7,8 +7,8 @@ const openDB = (callback) => {
     console.log(event.oldVersion);
     console.log(event.newVersion);
     db = event.target.result;
-    if(!event.target.transaction.objectStoreNames.contains('volume'))
-    db.createObjectStore("volume", {keyPath: "key"});
+    if (!event.target.transaction.objectStoreNames.contains("volume"))
+      db.createObjectStore("volume", { keyPath: "key" });
   };
 
   request.onsuccess = function (event) {
@@ -23,7 +23,7 @@ const openDB = (callback) => {
 };
 
 const set = (key, value) => {
-  if(!db) throw new Error('Database not open.')
+  if (!db) throw new Error("Database not open.");
   const transaction = db.transaction(["volume"], "readwrite");
   const objectStore = transaction.objectStore("volume");
   const request = objectStore.put({ key, value });
@@ -38,13 +38,13 @@ const set = (key, value) => {
 };
 
 const get = (key, callback) => {
-  if(!db) throw new Error('Database not open.')
+  if (!db) throw new Error("Database not open.");
   const transaction = db.transaction(["volume"], "readonly");
   const objectStore = transaction.objectStore("volume");
   const request = objectStore.get(key);
 
   request.onsuccess = function () {
-    if (callback) callback(request.result ? request.result.value : null);
+    if (callback) callback(request.result ? request.result.value : 0);
   };
 
   request.onerror = function (event) {
@@ -53,7 +53,7 @@ const get = (key, callback) => {
 };
 
 const remove = (key) => {
-  if(!db) throw new Error('Database not open.')
+  if (!db) throw new Error("Database not open.");
   const transaction = db.transaction(["volume"], "readwrite");
   const objectStore = transaction.objectStore("volume");
   const request = objectStore.delete(key);
@@ -68,7 +68,7 @@ const remove = (key) => {
 };
 
 const clear = () => {
-  if(!db) throw new Error('Database not open.')
+  if (!db) throw new Error("Database not open.");
   const transaction = db.transaction(["volume"], "readwrite");
   const objectStore = transaction.objectStore("volume");
   const request = objectStore.clear();
@@ -82,4 +82,4 @@ const clear = () => {
   };
 };
 
-export { openDB, set, get, remove, clear }
+export { openDB, set, get, remove, clear };
