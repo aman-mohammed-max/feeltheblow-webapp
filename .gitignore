@@ -4,6 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
+/.gitignore
+/.vscode
+/package-lock.json
+/material-theme.zip
 
 # testing
 /coverage
