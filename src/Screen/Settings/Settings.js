@@ -16,9 +16,7 @@ export default function Settings() {
       const metaThemeColor = document.querySelector("meta[name=theme-color]");
       metaThemeColor.setAttribute(
         "content",
-        window
-          .getComputedStyle(document.documentElement)
-          .getPropertyValue("--background")
+        window.getComputedStyle(document.body).getPropertyValue("--background")
       );
       return (
         <Helmet>

@@ -31,7 +31,7 @@ function Main() {
   metaThemeColor.setAttribute(
     "content",
     window
-      .getComputedStyle(document.documentElement)
+      .getComputedStyle(document.body)
       .getPropertyValue("--primary-container")
   );
 
