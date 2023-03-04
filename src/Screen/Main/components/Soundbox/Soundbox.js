@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./Soundbox.module.css";
 
 function Soundbox(props) {
   return (
@@ -9,10 +8,7 @@ function Soundbox(props) {
         {props.icon}
         <p className="medium-text capitalize bold">{props.title}</p>
       </div>
-      <article
-        className={`no-elevate ${styles.container}`}
-        style={{ marginTop: 9 }}
-      >
+      <article className="no-elevate container-box-bg" style={{ marginTop: 9 }}>
         {props.children}
       </article>
     </div>
