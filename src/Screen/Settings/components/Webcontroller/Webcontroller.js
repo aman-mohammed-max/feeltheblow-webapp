@@ -68,15 +68,17 @@ function Webthemeswitcher() {
     switch (switchRef.current.checked) {
       case true:
         console.log("dark mode");
+        document.body.className = "dark";
         setDark(true);
         break;
       case false:
         setDark(false);
         console.log("light mode");
+        document.body.className = "light";
         break;
       default:
         setDark(false);
-        console.log("light mode");
+        document.body.className = "light";
     }
   }
 
