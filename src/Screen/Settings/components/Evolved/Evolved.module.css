@@ -5,6 +5,6 @@
 }
 
 .top {
-  gap: 10rem !important;
+  gap: 0rem !important;
   pointer-events: none;
 }

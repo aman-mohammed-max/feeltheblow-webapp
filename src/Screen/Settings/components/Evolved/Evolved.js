@@ -10,7 +10,7 @@ import styles from "./Evolved.module.css";
 function Evolved() {
   return (
     <article className="round container-box-bg no-elevate no-margin primary-container">
-      <div className="row tiny-margin">
+      <div className="row tiny-margin container-box-bg round">
         <img alt="" className="large circle small-padding" src={blanket} />
         <div>
           <h5 className={`center-align ${styles.title}`}>

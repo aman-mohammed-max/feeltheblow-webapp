@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Appbar from "./components/Appbar/Appbar";
 import "./Main.css";
-import string from '../../Global/string.json';
+import string from "../../Global/string.json";
 import Soundbox from "./components/Soundbox/Soundbox";
 import Soundrow from "./components/Soundrow/Soundrow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +10,6 @@ import FAB from "./components/FAB/FAB";
 import { audioschema } from "./json/audioschema";
 import { audioschemaicon } from "./json/audioschemaicon";
 import { Helmet } from "react-helmet";
-
 
 function Main() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -26,6 +25,15 @@ function Main() {
       audioschema.AllSoundsPause();
     }
   }
+
+  const metaThemeColor = document.querySelector("meta[name=theme-color]");
+
+  metaThemeColor.setAttribute(
+    "content",
+    window
+      .getComputedStyle(document.documentElement)
+      .getPropertyValue("--primary-container")
+  );
 
   return (
     <>

@@ -64,14 +64,11 @@ function Webthemeswitcher() {
   const switchRef = useRef(null);
   const [isDark, setDark] = useState();
 
-  const metaThemeColor = document.querySelector("meta[name=theme-color]");
-
   function handleClick() {
     switch (switchRef.current.checked) {
       case true:
         console.log("dark mode");
         document.body.className = "dark";
-        metaThemeColor.setAttribute("content", "#ff0000");
         setDark(true);
         break;
       case false:

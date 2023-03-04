@@ -1,4 +1,4 @@
-import React , { useContext } from "react";
+import React, { useContext } from "react";
 import styles from "./Settings.module.css";
 import string from "./string.json";
 import { settingsopen } from "../..";
@@ -13,6 +13,13 @@ export default function Settings() {
 
   function Title() {
     if (open) {
+      const metaThemeColor = document.querySelector("meta[name=theme-color]");
+      metaThemeColor.setAttribute(
+        "content",
+        window
+          .getComputedStyle(document.documentElement)
+          .getPropertyValue("--background")
+      );
       return (
         <Helmet>
           <title>{string.title}</title>
@@ -24,12 +31,18 @@ export default function Settings() {
   return (
     <>
       <Title />
-        <div className={open ? "active modal nonminwidth medium-padding max select_disabled" : "modal nonminwidth no-padding max select_disabled"}>
-        <Appbar/>
+      <div
+        className={
+          open
+            ? "active modal nonminwidth medium-padding max select_disabled"
+            : "modal nonminwidth no-padding max select_disabled"
+        }
+      >
+        <Appbar />
         <div className={`medium-padding ${styles.body}`}>
-          <Webcontroller/>  
-          <Aboutdev/>
-          <Evolved/>
+          <Webcontroller />
+          <Aboutdev />
+          <Evolved />
         </div>
       </div>
     </>
