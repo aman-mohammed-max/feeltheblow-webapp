@@ -64,16 +64,24 @@ function Webthemeswitcher() {
   const switchRef = useRef(null);
   const [isDark, setDark] = useState();
 
+  function stutusbar() {
+    const metaThemeColor = document.querySelector("meta[name=theme-color]");
+    metaThemeColor.setAttribute(
+      "content",
+      window.getComputedStyle(document.body).getPropertyValue("--background")
+    );
+  }
+
   function handleClick() {
     switch (switchRef.current.checked) {
       case true:
-        console.log("dark mode");
-        document.body.className = "dark";
+        stutusbar();
         setDark(true);
+        document.body.className = "dark";
         break;
       case false:
         setDark(false);
-        console.log("light mode");
+        stutusbar();
         document.body.className = "light";
         break;
       default:
