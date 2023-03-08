@@ -45,7 +45,7 @@ function Webvolumecontroller() {
             marginLeft: 3.5,
           }}
         >
-          <FontAwesomeIcon icon={volm_icon} size="xl" />
+          <FontAwesomeIcon className={styles.icon} icon={volm_icon} size="xl" />
         </div>
       </div>
       <div className="max">

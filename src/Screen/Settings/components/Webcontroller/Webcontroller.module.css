@@ -1,21 +1,25 @@
 .containers {
-    background-color: transparent;
+  background-color: transparent;
 }
 
-.rows:first-child{
-    border-radius: 16rem 16rem 0 0;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+.rows:first-child {
+  border-radius: 16rem 16rem 0 0;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .rows {
-    margin-top: 2rem !important;
-    margin-bottom: 2rem !important;
-    font-weight: 500;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+  font-weight: 500;
 }
 
 .rows:last-child {
-    border-radius: 0 0 16rem 16rem;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+  border-radius: 0 0 16rem 16rem;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.icon {
+  color: var(--primary) !important;
 }
