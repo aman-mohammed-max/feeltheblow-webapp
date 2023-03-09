@@ -9,7 +9,7 @@ import Aboutdev from "./components/Aboutdev/Aboutdev";
 import Evolved from "./components/Evolved/Evolved";
 
 export default function Settings() {
-  const { open, setOpen } = useContext(settingsopen);
+  const { open } = useContext(settingsopen);
 
   function Title() {
     if (open) {
@@ -25,10 +25,6 @@ export default function Settings() {
       );
     }
   }
-
-  window.addEventListener("popstate", (event) => {
-    setOpen(!open);
-  });
 
   return (
     <>
