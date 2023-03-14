@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Appbar from "./components/Appbar/Appbar";
 import "./Main.css";
 import string from "../../Global/string.json";
@@ -10,8 +10,10 @@ import FAB from "./components/FAB/FAB";
 import { audioschema } from "./json/audioschema";
 import { audioschemaicon } from "./json/audioschemaicon";
 import { Helmet } from "react-helmet";
+import { settingsopen } from "../..";
 
 function Main() {
+  const { open } = useContext(settingsopen);
   const [isPlaying, setIsPlaying] = useState(false);
 
   function playbutton() {
@@ -41,7 +43,10 @@ function Main() {
         <title>{string.appname}</title>
       </Helmet>
       <Appbar />
-      <main className="responsive large-padding select_disabled">
+      <main
+        style={{ position: open ? "fixed" : "" }}
+        className="responsive large-padding select_disabled"
+      >
         <Soundbox
           icon={audioschemaicon.naturel.icon}
           title={audioschema.naturel.name}
