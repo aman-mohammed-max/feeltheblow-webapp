@@ -51,6 +51,7 @@ function Webvolumecontroller() {
       <div className="max">
         <Sliders
           max={1}
+          defaultValue={0}
           onChange={handle}
           step={0.0000001}
           style={{ width: "100%" }}

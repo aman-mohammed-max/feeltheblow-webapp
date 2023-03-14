@@ -1,10 +1,21 @@
 .title {
   font-family: "Comfortaa", cursive;
-  font-weight: 700 !important;
-  margin: 0 !important;
+  font-weight: 1000 !important;
+  margin-top: 2rem !important;
 }
 
 .top {
-  gap: 0rem !important;
   pointer-events: none;
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+.description {
+  margin-right: 8rem !important;
+  margin-left: 8rem !important;
+}
+
+.button_container {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }

@@ -10,16 +10,22 @@ import styles from "./Evolved.module.css";
 function Evolved() {
   return (
     <article className="round container-box-bg no-elevate no-margin primary-container">
-      <div className="row tiny-margin container-box-bg round">
-        <img alt="" className="large circle small-padding" src={blanket} />
-        <div>
-          <h5 className={`center-align ${styles.title}`}>
-            {string.evolved.title}
-          </h5>
-        </div>
+      <div
+        className={`row small-padding container-box-bg round  ${styles.top}`}
+      >
+        <img
+          alt="blanket"
+          className="large circle small-padding"
+          src={blanket}
+        />
+        <h5 className={`center-align absolute center middle ${styles.title}`}>
+          {string.evolved.title}
+        </h5>
       </div>
-      <p className="small-margin">{string.evolved.des}</p>
-      <div className="tiny-margin">
+      <p className={`medium-margin ${styles.description}`}>
+        {string.evolved.des}
+      </p>
+      <div className={`small-margin ${styles.button_container}`}>
         <nav>
           <Button
             spb={false}
