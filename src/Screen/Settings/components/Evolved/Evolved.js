@@ -30,14 +30,14 @@ function Evolved() {
           <Button
             spb={false}
             onClick={() => openLink(string.evolved.button[1].link)}
-            onLongPress={() => copyandvib(string.evolved.button[1].link, 13)}
+            onLongPress={() => copyandvib(string.evolved.button[1].link, 130)}
             title={string.evolved.button[1].title}
             className="round border"
           />
           <Button
             spb={false}
             onClick={() => openLink(string.evolved.button[2].link)}
-            onLongPress={() => copyandvib(string.evolved.button[2].link, 13)}
+            onLongPress={() => copyandvib(string.evolved.button[2].link, 130)}
             title={string.evolved.button[2].title}
             className="round border"
           />
