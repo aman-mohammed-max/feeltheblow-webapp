@@ -6,16 +6,23 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import Main from "./Screen/Main/Main";
 import Settings from "./Screen/Settings/Settings";
+// import { Provider } from "react-redux";
+// import { store, persistor } from "./Global/functions/indexedDBs/Settings";
+// import { PersistGate } from "redux-persist/lib/integration/react";
 
 export const settingsopen = createContext(null);
 
 function App() {
   const [open, setOpen] = useState(false);
   return (
-      <settingsopen.Provider value={{ open, setOpen }}>
-        <Main />
-        <Settings />
-      </settingsopen.Provider>
+    // <Provider store={store}>
+    //   <PersistGate loading={<div>Loading......</div>} persistor={persistor}>
+    <settingsopen.Provider value={{ open, setOpen }}>
+      <Main />
+      <Settings />
+    </settingsopen.Provider>
+    //   </PersistGate>
+    // </Provider>
   );
 }
 

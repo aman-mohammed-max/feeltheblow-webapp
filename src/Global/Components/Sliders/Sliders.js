@@ -42,6 +42,7 @@ Sliders.propTypes = {
   onChange: PropTypes.func,
   step: PropTypes.number,
   style: PropTypes.object,
+  defaultValue: PropTypes.number,
 };
 
 Sliders.defaultProps = {
