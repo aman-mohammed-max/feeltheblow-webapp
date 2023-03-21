@@ -23,6 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .gitignore
-/.vscode
+.vscode
 package-lock.json
 material-theme.zip
