@@ -5,13 +5,6 @@ import React, {
 import PropTypes from "prop-types";
 import Sliders from "../../../../Global/Components/Sliders/Sliders";
 import volumedb from "../../../../Global/functions/indexedDBs/Volume";
-// import {
-//   openDB,
-//   // set,
-//   get,
-//   // remove,
-//   // clear,
-// } from "../../../../Global/Assets/localDB/LocalDB";
 
 function Soundrow(props) {
   const [defaultvalue, setDefaultvalue] = useState(0);

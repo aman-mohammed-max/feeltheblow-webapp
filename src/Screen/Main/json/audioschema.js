@@ -12,15 +12,6 @@ import coffee_shop from "../../../Global/Audio/coffee-shop.mp3";
 import fireplace from "../../../Global/Audio/fireplace.mp3";
 import pink_noise from "../../../Global/Audio/pink-noise.mp3";
 import white_noise from "../../../Global/Audio/white-noise.mp3";
-import {
-  openDB,
-  set,
-  //   get,
-  //   remove,
-  //   clear,
-} from "../../../Global/Assets/localDB/LocalDB";
-
-openDB();
 
 const Arain = new Audio(rain);
 const Astorm = new Audio(storm);
@@ -67,21 +58,6 @@ Afireplace.loop = true;
 Apink_noise.loop = true;
 Awhite_noise.loop = true;
 
-// set(audioschema.naturel.row[1].name , 0 )
-// set(audioschema.naturel.row[2].name , 0 )
-// set(audioschema.naturel.row[3].name , 0 )
-// set(audioschema.naturel.row[4].name , 0 )
-// set(audioschema.naturel.row[5].name , 0 )
-// set(audioschema.naturel.row[6].name , 0 )
-// set(audioschema.naturel.row[7].name , 0 )
-// set(audioschema.travel.row[1].name , 0 )
-// set(audioschema.travel.row[2].name , 0 )
-// set(audioschema.travel.row[3].name , 0 )
-// set(audioschema.interiors.row[1].name , 0 )
-// set(audioschema.interiors.row[2].name , 0 )
-// set(audioschema.noice.row[1].name , 0 )
-// set(audioschema.noice.row[2].name , 0 )
-
 export const audioschema = {
   naturel: {
     name: "natural",
@@ -89,57 +65,43 @@ export const audioschema = {
       1: {
         name: "rain",
         SVolume: function (e) {
-          var thisin = this;
           Arain.volume = e;
-          set(thisin.title, e);
         },
       },
       2: {
         name: "storm",
         SVolume: function (e) {
-          var thisin = this;
           Astorm.volume = e;
-          set(thisin.title, e);
         },
       },
       3: {
         name: "wind",
         SVolume: function (e) {
-          var thisin = this;
           Awind.volume = e;
-          set(thisin.title, e);
         },
       },
       4: {
         name: "waves",
         SVolume: function (e) {
-          var thisin = this;
           Awaves.volume = e;
-          set(thisin.title, e);
         },
       },
       5: {
         name: "stream",
         SVolume: function (e) {
-          var thisin = this;
           Astream.volume = e;
-          set(thisin.title, e);
         },
       },
       6: {
         name: "birds",
         SVolume: function (e) {
-          var thisin = this;
           Abirds.volume = e;
-          set(thisin.title, e);
         },
       },
       7: {
         name: "summer night",
         SVolume: function (e) {
-          var thisin = this;
           Asummer_night.volume = e;
-          set(thisin.title, e);
         },
       },
     },
@@ -151,25 +113,19 @@ export const audioschema = {
       1: {
         name: "train",
         SVolume: function (e) {
-          var thisin = this;
           Atrain.volume = e;
-          set(thisin.title, e);
         },
       },
       2: {
         name: "boat",
         SVolume: function (e) {
-          var thisin = this;
           Aboat.volume = e;
-          set(thisin.title, e);
         },
       },
       3: {
         name: "city",
         SVolume: function (e) {
-          var thisin = this;
           Acity.volume = e;
-          set(thisin.title, e);
         },
       },
     },
@@ -181,17 +137,13 @@ export const audioschema = {
       1: {
         name: "coffee shop",
         SVolume: function (e) {
-          var thisin = this;
           Acoffee_shop.volume = e;
-          set(thisin.title, e);
         },
       },
       2: {
         name: "fireplace",
         SVolume: function (e) {
-          var thisin = this;
           Afireplace.volume = e;
-          set(thisin.title, e);
         },
       },
     },
@@ -203,17 +155,13 @@ export const audioschema = {
       1: {
         name: "pink noise",
         SVolume: function (e) {
-          var thisin = this;
           Apink_noise.volume = e;
-          set(thisin.title, e);
         },
       },
       2: {
         name: "white noise",
         SVolume: function (e) {
-          var thisin = this;
           Awhite_noise.volume = e;
-          set(thisin.title, e);
         },
       },
     },
