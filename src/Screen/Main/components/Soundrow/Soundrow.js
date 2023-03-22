@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, {
+  //  useEffect,
+  useState,
+} from "react";
 import PropTypes from "prop-types";
 import Sliders from "../../../../Global/Components/Sliders/Sliders";
 import volumedb from "../../../../Global/functions/indexedDBs/Volume";
@@ -13,14 +16,12 @@ import volumedb from "../../../../Global/functions/indexedDBs/Volume";
 function Soundrow(props) {
   const [defaultvalue, setDefaultvalue] = useState(0);
 
-  useEffect(() => {
-    volumedb
-      .getItem(props.title)
-      .then(function (value) {
-        setDefaultvalue(value);
-      })
-      .catch((err) => console.log(err));
-  }, [defaultvalue]);
+  volumedb
+    .getItem(props.title)
+    .then(function (value) {
+      setDefaultvalue(value);
+    })
+    .catch((err) => console.log(err));
 
   function slidersonchange(e) {
     props.Volume(e.target.value);
