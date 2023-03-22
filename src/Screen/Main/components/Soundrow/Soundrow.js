@@ -1,25 +1,33 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Sliders from "../../../../Global/Components/Sliders/Sliders";
-import {
-  openDB,
-  // set,
-  get,
-  // remove,
-  // clear,
-} from "../../../../Global/Assets/localDB/LocalDB";
+import volumedb from "../../../../Global/functions/indexedDBs/Volume";
+// import {
+//   openDB,
+//   // set,
+//   get,
+//   // remove,
+//   // clear,
+// } from "../../../../Global/Assets/localDB/LocalDB";
 
 function Soundrow(props) {
   const [defaultvalue, setDefaultvalue] = useState(0);
 
   useEffect(() => {
-    openDB(() => {
-      get(props.title, setDefaultvalue);
-    });
-  }, [props.title]);
+    volumedb
+      .getItem(props.title)
+      .then(function (value) {
+        setDefaultvalue(value);
+      })
+      .catch((err) => console.log(err));
+  }, [defaultvalue]);
 
   function slidersonchange(e) {
     props.Volume(e.target.value);
+    setDefaultvalue(Number(e.target.value));
+    volumedb.setItem(props.title, Number(e.target.value), () => {
+      console.info(props.title);
+    });
   }
 
   return (
@@ -47,7 +55,7 @@ function Soundrow(props) {
         <p className="medium-text bold">{props.title}</p>
 
         <Sliders
-          defaultvalue={toString(defaultvalue)}
+          defaultvalue={defaultvalue}
           max={1}
           step={0.0000001}
           onChange={slidersonchange}
