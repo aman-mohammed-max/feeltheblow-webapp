@@ -30,10 +30,9 @@ function Soundrow(props) {
         if (audioRef.current.paused) {
           volumedb.getItem(props.title, function (err, value) {
             audioRef.current.volume = value;
-            console.error(err);
+            if (err) console.error(err);
           });
           audioRef.current.play();
-          console.info(`${props.title}:played`);
         } else {
           audioRef.current.pause();
         }
@@ -46,7 +45,7 @@ function Soundrow(props) {
           volumedb.getItem(props.title, function (err, value) {
             // eslint-disable-next-line
             audioRef.current.volume = value;
-            console.error(err);
+            if (err) console.error(err);
           });
           audioRef.current.play();
         });
