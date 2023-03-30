@@ -23,11 +23,14 @@ function Soundrow(props) {
   });
 
   useEffect(() => {
+    // eslint-disable-next-line
     if (fab.current) {
+      // eslint-disable-next-line
       fab.current.addEventListener("click", () => {
         if (audioRef.current.paused) {
           volumedb.getItem(props.title, function (err, value) {
             audioRef.current.volume = value;
+            console.error(err);
           });
           audioRef.current.play();
           console.info(`${props.title}:played`);
@@ -38,21 +41,23 @@ function Soundrow(props) {
     }
     return () => {
       if (fab.current) {
+        // eslint-disable-next-line
         fab.current.removeEventListener("click", () => {
           volumedb.getItem(props.title, function (err, value) {
+            // eslint-disable-next-line
             audioRef.current.volume = value;
+            console.error(err);
           });
           audioRef.current.play();
         });
       }
     };
+    // eslint-disable-next-line
   }, [fab, audioRef.current, props.title]);
 
   function slidersonchange(e) {
     audioRef.current.volume = e.target.value;
-    volumedb.setItem(props.title, Number(e.target.value), () => {
-      console.info(props.title);
-    });
+    volumedb.setItem(props.title, Number(e.target.value));
   }
   return (
     <div className="row">
