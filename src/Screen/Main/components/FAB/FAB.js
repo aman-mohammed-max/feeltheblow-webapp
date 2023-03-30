@@ -1,7 +1,7 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
-function FAB(props) {
+const FAB = forwardRef((props, ref) => {
   return (
     <button
       style={{
@@ -9,6 +9,7 @@ function FAB(props) {
         bottom: 15,
         right: 10,
       }}
+      ref={ref}
       onClick={props.onClick}
       className="extra square round primary medium-elevate"
     >
@@ -16,7 +17,7 @@ function FAB(props) {
       <span>{props.title}</span>
     </button>
   );
-}
+});
 
 FAB.propTypes = {
   icon: PropTypes.node,

@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./Global/Fonts/Fonts.css";
@@ -11,14 +11,20 @@ import Settings from "./Screen/Settings/Settings";
 // import { PersistGate } from "redux-persist/lib/integration/react";
 
 export const settingsopen = createContext(null);
+export const audioplay = createContext(null);
 
 function App() {
   const [open, setOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  let fab = useRef(null);
+
   return (
     // <Provider store={store}>
     //   <PersistGate loading={<div>Loading......</div>} persistor={persistor}>
     <settingsopen.Provider value={{ open, setOpen }}>
-      <Main />
+      <audioplay.Provider value={{ fab, isPlaying, setIsPlaying }}>
+        <Main />
+      </audioplay.Provider>
       <Settings />
     </settingsopen.Provider>
     //   </PersistGate>
