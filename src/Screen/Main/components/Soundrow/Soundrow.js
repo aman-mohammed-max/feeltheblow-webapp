@@ -11,13 +11,11 @@ function Soundrow(props) {
 
   useEffect(() => {
     const audio = audioRef.current;
-    // Add event listener for "pause" event
     const handlePause = () => setIsPlaying(false);
     const handlePlay = () => setIsPlaying(true);
     audio.addEventListener("pause", handlePause);
     audio.addEventListener("play", handlePlay);
 
-    // Clean up event listener
     return () => {
       audio.removeEventListener("pause", handlePause);
       audio.removeEventListener("play", handlePlay);
