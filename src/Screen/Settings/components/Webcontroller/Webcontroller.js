@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import {
   faVolumeHigh,
   faVolumeLow,
@@ -8,6 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Sliders from "../../../../Global/Components/Sliders/Sliders";
 import styles from "./Webcontroller.module.css";
+import { useDispatch, useSelector } from "react-redux";
 
 function Webvolumecontroller() {
   const [volm_icon, setvolm_icon] = useState(faVolumeXmark);
@@ -62,47 +63,27 @@ function Webvolumecontroller() {
 }
 
 function Webthemeswitcher() {
-  const switchRef = useRef(null);
-  const [isDark, setDark] = useState();
-
-  function stutusbar(color) {
-    const metaThemeColor = document.querySelector("meta[name=theme-color]");
-    metaThemeColor.setAttribute(
-      "content",
-      window
-        .getComputedStyle(document.body)
-        .getPropertyValue("--md-sys-color-background-" + color)
-    );
-  }
-
-  function handleClick() {
-    switch (switchRef.current.checked) {
-      case true:
-        stutusbar("dark");
-        setDark(true);
-        document.body.className = "dark";
-        break;
-      case false:
-        setDark(false);
-        stutusbar("light");
-        document.body.className = "light";
-        break;
-      default:
-        setDark(false);
-        document.body.className = "light";
-    }
-  }
+  const dispatch = useDispatch();
+  const themeState = useSelector((store) => store.theme);
 
   return (
     <div
       className={`row medium-padding container-box-bg primary-container ${styles.rows}`}
     >
-      <p>{isDark ? "Dark Mode" : "Light Mode"}</p>
+      <p>{themeState ? "Dark Mode" : "Light Mode"}</p>
       <div className="max"></div>
       <label className="switch right">
-        <input type="checkbox" ref={switchRef} onChange={handleClick} />
+        <input
+          checked={themeState}
+          type="checkbox"
+          onChange={(e) => {
+            e.target.checked
+              ? dispatch({ type: "DARK" })
+              : dispatch({ type: "LIGHT" });
+          }}
+        />
         <span>
-          <i>{isDark ? "dark_mode" : "light_mode"}</i>
+          <i>{themeState ? "dark_mode" : "light_mode"}</i>
         </span>
       </label>
     </div>

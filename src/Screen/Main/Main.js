@@ -10,19 +10,48 @@ import FAB from "./components/FAB/FAB";
 import audioschema from "./json/audioschema";
 import { Helmet } from "react-helmet";
 import { audioplay, settingsopen } from "../..";
+import { useSelector } from "react-redux";
 
 function Main() {
   const { open } = useContext(settingsopen);
   const { fab, isPlaying } = useContext(audioplay);
+  const themeState = useSelector((store) => store.theme);
 
   const metaThemeColor = document.querySelector("meta[name=theme-color]");
+  if (!open) {
+    metaThemeColor.setAttribute(
+      "content",
+      window
+        .getComputedStyle(document.body)
+        .getPropertyValue(
+          `--md-sys-color-primary-container-${themeState ? "dark" : "light"}`
+        )
+    );
+  }
 
-  metaThemeColor.setAttribute(
-    "content",
-    window
-      .getComputedStyle(document.body)
-      .getPropertyValue("--primary-container")
-  );
+  function stutusbar(color) {
+    if (open) {
+      metaThemeColor.setAttribute(
+        "content",
+        window
+          .getComputedStyle(document.body)
+          .getPropertyValue("--md-sys-color-background-" + color)
+      );
+    }
+  }
+
+  switch (themeState) {
+    case true:
+      stutusbar("dark");
+      document.body.className = "dark";
+      break;
+    case false:
+      stutusbar("light");
+      document.body.className = "light";
+      break;
+    default:
+      document.body.className = "light";
+  }
 
   return (
     <>

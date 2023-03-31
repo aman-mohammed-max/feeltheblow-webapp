@@ -1,10 +1,10 @@
 import { createStore, combineReducers } from "redux";
 import { persistReducer, persistStore } from "redux-persist";
-// import { loggedReducer } from "./LoggedReducer";
+import { themeReducer } from "./reducer/theme";
 import storage from "redux-persist-indexeddb-storage";
 
 const rootReducer = {
-  //  logged: loggedReducer,
+  theme: themeReducer,
 };
 
 const config = {

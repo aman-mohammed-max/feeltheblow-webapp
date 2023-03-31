@@ -40,3 +40,9 @@ progress::-ms-fill {
   -moz-user-select: none;
   -khtml-user-select: none;
 }
+
+.flashscreen {
+  background-color: var(--background) !important;
+  width: 100% !important;
+  height: 100% !important;
+}

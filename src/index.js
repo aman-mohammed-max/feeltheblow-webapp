@@ -6,9 +6,9 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import Main from "./Screen/Main/Main";
 import Settings from "./Screen/Settings/Settings";
-// import { Provider } from "react-redux";
-// import { store, persistor } from "./Global/functions/indexedDBs/Settings";
-// import { PersistGate } from "redux-persist/lib/integration/react";
+import { Provider } from "react-redux";
+import { store, persistor } from "./Global/functions/indexedDBs/Settings";
+import { PersistGate } from "redux-persist/lib/integration/react";
 
 export const settingsopen = createContext(null);
 export const audioplay = createContext(null);
@@ -19,16 +19,19 @@ function App() {
   let fab = useRef(null);
 
   return (
-    // <Provider store={store}>
-    //   <PersistGate loading={<div>Loading......</div>} persistor={persistor}>
-    <settingsopen.Provider value={{ open, setOpen }}>
-      <audioplay.Provider value={{ fab, isPlaying, setIsPlaying }}>
-        <Main />
-      </audioplay.Provider>
-      <Settings />
-    </settingsopen.Provider>
-    //   </PersistGate>
-    // </Provider>
+    <Provider store={store}>
+      <PersistGate
+        loading={<div className="flashscreen"></div>}
+        persistor={persistor}
+      >
+        <settingsopen.Provider value={{ open, setOpen }}>
+          <audioplay.Provider value={{ fab, isPlaying, setIsPlaying }}>
+            <Main />
+          </audioplay.Provider>
+          <Settings />
+        </settingsopen.Provider>
+      </PersistGate>
+    </Provider>
   );
 }
 
