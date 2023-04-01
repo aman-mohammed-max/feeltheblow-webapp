@@ -91,6 +91,8 @@ function Webthemeswitcher() {
 }
 
 function Webbackgroundswitcher() {
+  const dispatch = useDispatch();
+  const runbg = useSelector((store) => store.runbg);
   return (
     <div
       className={`row medium-padding container-box-bg primary-container ${styles.rows}`}
@@ -98,7 +100,15 @@ function Webbackgroundswitcher() {
       <p>Run in background</p>
       <div className="max"></div>
       <label className="switch right">
-        <input type="checkbox" />
+        <input
+          checked={runbg}
+          type="checkbox"
+          onChange={(e) => {
+            e.target.checked
+              ? dispatch({ type: "RUN" })
+              : dispatch({ type: "NORUN" });
+          }}
+        />
         <span></span>
       </label>
     </div>

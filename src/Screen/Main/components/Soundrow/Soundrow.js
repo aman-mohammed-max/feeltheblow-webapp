@@ -4,10 +4,24 @@ import Sliders from "../../../../Global/Components/Sliders/Sliders";
 import volumedb from "../../../../Global/functions/indexedDBs/Volume";
 import Volumedbcom from "../../../../Global/functions/indexedDBs/Volume/Components/Getitems";
 import { audioplay } from "../../../..";
+import { useSelector } from "react-redux";
 function Soundrow(props) {
   const { fab, setIsPlaying } = useContext(audioplay);
   const audioRef = useRef(new Audio(props.src));
+  const runbg = useSelector((store) => store.runbg);
   audioRef.current.loop = true;
+
+  useEffect(() => {
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "hidden" && !runbg) {
+        // eslint-disable-next-line
+        audioRef.current.pause();
+        console.log(`on ${document.visibilityState}`);
+      } else {
+        // console.log(document.visibilityState);
+      }
+    });
+  }, [runbg]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -38,19 +52,6 @@ function Soundrow(props) {
         }
       });
     }
-    return () => {
-      if (fab.current) {
-        // eslint-disable-next-line
-        fab.current.removeEventListener("click", () => {
-          volumedb.getItem(props.title, function (err, value) {
-            // eslint-disable-next-line
-            audioRef.current.volume = value;
-            if (err) console.error(err);
-          });
-          audioRef.current.play();
-        });
-      }
-    };
     // eslint-disable-next-line
   }, [fab, audioRef.current, props.title]);
 
