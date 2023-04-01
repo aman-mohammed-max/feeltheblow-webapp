@@ -17,8 +17,6 @@ function Soundrow(props) {
         // eslint-disable-next-line
         audioRef.current.pause();
         console.log(`on ${document.visibilityState}`);
-      } else {
-        // console.log(document.visibilityState);
       }
     });
   }, [runbg]);
