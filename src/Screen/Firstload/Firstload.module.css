@@ -1,0 +1,21 @@
+.main {
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1001;
+  position: fixed;
+  background-color: var(--active);
+  border-radius: none !important;
+}
+
+.card_bottom {
+  padding-top: 0 !important;
+}
+
+.error_p {
+  color: var(--error);
+}
+
+.p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}

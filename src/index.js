@@ -9,6 +9,7 @@ import Settings from "./Screen/Settings/Settings";
 import { Provider } from "react-redux";
 import { store, persistor } from "./Global/functions/indexedDBs/Settings";
 import { PersistGate } from "redux-persist/lib/integration/react";
+import Firstload from "./Screen/Firstload/Firstload";
 
 export const settingsopen = createContext(null);
 export const audioplay = createContext(null);
@@ -24,6 +25,7 @@ function App() {
         loading={<div className="flashscreen"></div>}
         persistor={persistor}
       >
+        <Firstload />
         <settingsopen.Provider value={{ open, setOpen }}>
           <audioplay.Provider value={{ fab, isPlaying, setIsPlaying }}>
             <Main />
